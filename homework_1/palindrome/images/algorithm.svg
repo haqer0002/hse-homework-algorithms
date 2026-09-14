@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1064" viewBox="0 0 1000 1064" role="img" aria-labelledby="title desc">
+<title id="title">Палиндром: разворачиваем цифры</title>
+<desc id="desc">Пять шагов проверки числа 12021. На каждом шаге последняя цифра остатка добавляется справа к развёрнутой части. Остатки: 1202, 120, 12, 1, 0. Развёрнутые части: 1, 12, 120, 1202, 12021. В конце 12021 равно исходному числу: True.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#637185"/></marker></defs>
+<rect x="0" y="0" width="1000" height="1064" rx="0" fill="#ffffff"/>
+<text x="40" y="57" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#172b4d" text-anchor="start">Палиндром: разворачиваем цифры</text>
+<text x="40" y="91" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">Берём последнюю цифру через % 10, затем удаляем её через // 10.</text>
+<rect x="40" y="117" width="920" height="69" rx="12" fill="#f7f9fc"/>
+<text x="60" y="144" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#52627a" text-anchor="start">Начало</text>
+<text x="60" y="170" font-family="Menlo, Consolas, monospace" font-size="19" font-weight="400" fill="#172b4d" text-anchor="start">number = 12021    remaining = 12021    reversed_number = 0</text>
+<text x="118" y="226" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">Остаток до шага</text>
+<text x="630" y="226" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">Развёрнутая часть после шага</text>
+<rect x="442" y="211" width="15" height="15" rx="3" fill="#fff0cf" stroke="#914700" stroke-width="1.3"/>
+<text x="466" y="225" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#914700" text-anchor="start">цифра</text>
+<line x1="66" y1="278" x2="66" y2="840" stroke="#cbd5e1" stroke-width="2"/>
+<circle cx="66" cy="275" r="20" fill="#edf4ff"/>
+<text x="66" y="282" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="118" y="250" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="142.0" y="284" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="173" y="250" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="197.0" y="284" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="228" y="250" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="252.0" y="284" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">0</text>
+<rect x="283" y="250" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="307.0" y="284" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="338" y="250" width="48" height="50" rx="8" fill="#fff0cf" stroke="#914700" stroke-width="1.3"/>
+<text x="362.0" y="284" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#914700" text-anchor="middle">1</text>
+<text x="118" y="329" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">После // 10: 1202</text>
+<text x="515" y="267" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#914700" text-anchor="middle">digit = 1</text>
+<line x1="427" y1="286" x2="594" y2="286" stroke="#637185" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="630" y="250" width="48" height="50" rx="8" fill="#fff0cf" stroke="#914700" stroke-width="1.3"/>
+<text x="654.0" y="284" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#914700" text-anchor="middle">1</text>
+<text x="630" y="329" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">0 × 10 + 1 = 1</text>
+<line x1="118" y1="357" x2="960" y2="357" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="66" cy="413" r="20" fill="#edf4ff"/>
+<text x="66" y="420" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="118" y="388" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="142.0" y="422" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="173" y="388" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="197.0" y="422" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="228" y="388" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="252.0" y="422" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">0</text>
+<rect x="283" y="388" width="48" height="50" rx="8" fill="#fff0cf" stroke="#914700" stroke-width="1.3"/>
+<text x="307.0" y="422" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#914700" text-anchor="middle">2</text>
+<text x="118" y="467" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">После // 10: 120</text>
+<text x="515" y="405" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#914700" text-anchor="middle">digit = 2</text>
+<line x1="427" y1="424" x2="594" y2="424" stroke="#637185" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="630" y="388" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="654.0" y="422" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="685" y="388" width="48" height="50" rx="8" fill="#fff0cf" stroke="#914700" stroke-width="1.3"/>
+<text x="709.0" y="422" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#914700" text-anchor="middle">2</text>
+<text x="630" y="467" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">1 × 10 + 2 = 12</text>
+<line x1="118" y1="495" x2="960" y2="495" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="66" cy="551" r="20" fill="#edf4ff"/>
+<text x="66" y="558" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1d4ed8" text-anchor="middle">3</text>
+<rect x="118" y="526" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="142.0" y="560" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="173" y="526" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="197.0" y="560" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="228" y="526" width="48" height="50" rx="8" fill="#fff0cf" stroke="#914700" stroke-width="1.3"/>
+<text x="252.0" y="560" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#914700" text-anchor="middle">0</text>
+<text x="118" y="605" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">После // 10: 12</text>
+<text x="515" y="543" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#914700" text-anchor="middle">digit = 0</text>
+<line x1="427" y1="562" x2="594" y2="562" stroke="#637185" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="630" y="526" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="654.0" y="560" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="685" y="526" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="709.0" y="560" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="740" y="526" width="48" height="50" rx="8" fill="#fff0cf" stroke="#914700" stroke-width="1.3"/>
+<text x="764.0" y="560" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#914700" text-anchor="middle">0</text>
+<text x="630" y="605" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">12 × 10 + 0 = 120</text>
+<line x1="118" y1="633" x2="960" y2="633" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="66" cy="689" r="20" fill="#edf4ff"/>
+<text x="66" y="696" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1d4ed8" text-anchor="middle">4</text>
+<rect x="118" y="664" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="142.0" y="698" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="173" y="664" width="48" height="50" rx="8" fill="#fff0cf" stroke="#914700" stroke-width="1.3"/>
+<text x="197.0" y="698" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#914700" text-anchor="middle">2</text>
+<text x="118" y="743" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">После // 10: 1</text>
+<text x="515" y="681" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#914700" text-anchor="middle">digit = 2</text>
+<line x1="427" y1="700" x2="594" y2="700" stroke="#637185" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="630" y="664" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="654.0" y="698" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="685" y="664" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="709.0" y="698" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="740" y="664" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="764.0" y="698" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">0</text>
+<rect x="795" y="664" width="48" height="50" rx="8" fill="#fff0cf" stroke="#914700" stroke-width="1.3"/>
+<text x="819.0" y="698" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#914700" text-anchor="middle">2</text>
+<text x="630" y="743" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">120 × 10 + 2 = 1202</text>
+<line x1="118" y1="771" x2="960" y2="771" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="66" cy="827" r="20" fill="#edf4ff"/>
+<text x="66" y="834" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1d4ed8" text-anchor="middle">5</text>
+<rect x="118" y="802" width="48" height="50" rx="8" fill="#fff0cf" stroke="#914700" stroke-width="1.3"/>
+<text x="142.0" y="836" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#914700" text-anchor="middle">1</text>
+<text x="118" y="881" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">После // 10: 0</text>
+<text x="515" y="819" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#914700" text-anchor="middle">digit = 1</text>
+<line x1="427" y1="838" x2="594" y2="838" stroke="#637185" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="630" y="802" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="654.0" y="836" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="685" y="802" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="709.0" y="836" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="740" y="802" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="764.0" y="836" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">0</text>
+<rect x="795" y="802" width="48" height="50" rx="8" fill="#edf4ff"/>
+<text x="819.0" y="836" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="850" y="802" width="48" height="50" rx="8" fill="#fff0cf" stroke="#914700" stroke-width="1.3"/>
+<text x="874.0" y="836" font-family="Menlo, Consolas, monospace" font-size="27" font-weight="700" fill="#914700" text-anchor="middle">1</text>
+<text x="630" y="881" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">1202 × 10 + 1 = 12021</text>
+<rect x="40" y="946" width="920" height="82" rx="12" fill="#e7f5ef"/>
+<text x="61" y="977" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#11654f" text-anchor="start">remaining = 0 → цикл завершён</text>
+<text x="61" y="1008" font-family="Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#11654f" text-anchor="start">12021 == 12021</text>
+<text x="931" y="998" font-family="Menlo, Consolas, monospace" font-size="34" font-weight="700" fill="#11654f" text-anchor="end">True</text>
+</svg>
