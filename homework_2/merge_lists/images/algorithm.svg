@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1490" viewBox="0 0 1000 1490" role="img" aria-labelledby="title desc">
+<title id="title">Слияние двух отсортированных списков</title>
+<desc id="desc">A1(1) → A2(2) → A3(4) и B1(1) → B2(3) → B3(4). Оба способа выбирают A1, B1, A2, B2, A3 и присоединяют B3. При равенстве выбираем из первого списка. Фиктивный D не входит в результат. На шагах 1–5 показан собранный префикс, tail и две головы оставшихся частей; на шаге 6 — весь результат.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#637185"/></marker></defs>
+<rect x="0" y="0" width="1000" height="1490" rx="0" fill="#ffffff"/>
+<text x="40" y="57" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#172b4d" text-anchor="start">Слияние двух отсортированных списков</text>
+<text x="40" y="91" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">Переставляем ссылки next. При равных значениях берём узел из list1.</text>
+<rect x="40" y="117" width="920" height="132" rx="12" fill="#f7f9fc"/>
+<text x="62" y="145" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">Метки A1…B3 различают узлы с одинаковыми значениями.</text>
+<text x="62" y="184" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1d4ed8" text-anchor="start">list1:</text>
+<text x="62" y="224" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#914700" text-anchor="start">list2:</text>
+<rect x="151" y="160" width="153" height="32" rx="6" fill="#edf4ff"/>
+<text x="227" y="183" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1 (1)</text>
+<line x1="306" y1="176" x2="340" y2="176" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="351" y="160" width="153" height="32" rx="6" fill="#edf4ff"/>
+<text x="427" y="183" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#1d4ed8" text-anchor="middle">A2 (2)</text>
+<line x1="506" y1="176" x2="540" y2="176" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="551" y="160" width="153" height="32" rx="6" fill="#edf4ff"/>
+<text x="627" y="183" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#1d4ed8" text-anchor="middle">A3 (4)</text>
+<line x1="706" y1="176" x2="740" y2="176" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="751" y="183" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">None</text>
+<rect x="151" y="200" width="153" height="32" rx="6" fill="#fff0cf"/>
+<text x="227" y="223" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#914700" text-anchor="middle">B1 (1)</text>
+<line x1="306" y1="216" x2="340" y2="216" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="351" y="200" width="153" height="32" rx="6" fill="#fff0cf"/>
+<text x="427" y="223" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#914700" text-anchor="middle">B2 (3)</text>
+<line x1="506" y1="216" x2="540" y2="216" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="551" y="200" width="153" height="32" rx="6" fill="#fff0cf"/>
+<text x="627" y="223" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#914700" text-anchor="middle">B3 (4)</text>
+<line x1="706" y1="216" x2="740" y2="216" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="751" y="223" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">None</text>
+<text x="40" y="290" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#1d4ed8" text-anchor="start">С фиктивным узлом</text>
+<text x="510" y="290" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#1d4ed8" text-anchor="start">Без фиктивного узла</text>
+<text x="40" y="322" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">D = dummy; сначала tail = D.</text>
+<text x="510" y="322" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">Сначала выбираем head и tail.</text>
+<text x="40" y="360" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">Шаги 1–5: показан собранный префикс до tail.</text>
+<text x="40" y="388" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">Ссылка tail.next может пока вести в необработанную часть списка.</text>
+<rect x="40" y="413" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="56" y="441" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">1. Равны 1 и 1 → берём A1</text>
+<rect x="56" y="455" width="42" height="32" rx="6" fill="#e9edf2"/>
+<text x="77" y="477" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#637185" text-anchor="middle">D</text>
+<line x1="99" y1="471" x2="112" y2="471" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="116" y="455" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="137" y="477" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<text x="137" y="501" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<text x="56" y="519" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = A2; list2 = B1</text>
+<rect x="510" y="413" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="526" y="441" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">1. Равны 1 и 1 → берём A1</text>
+<rect x="526" y="455" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="547" y="477" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<text x="547" y="501" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<text x="526" y="519" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = A2; list2 = B1</text>
+<rect x="40" y="540" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="56" y="568" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">2. 1 &lt; 2 → берём B1</text>
+<rect x="56" y="582" width="42" height="32" rx="6" fill="#e9edf2"/>
+<text x="77" y="604" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#637185" text-anchor="middle">D</text>
+<line x1="99" y1="598" x2="112" y2="598" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="116" y="582" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="137" y="604" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<line x1="159" y1="598" x2="172" y2="598" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="176" y="582" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="197" y="604" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B1</text>
+<text x="197" y="628" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<text x="56" y="646" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = A2; list2 = B2</text>
+<rect x="510" y="540" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="526" y="568" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">2. 1 &lt; 2 → берём B1</text>
+<rect x="526" y="582" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="547" y="604" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<line x1="569" y1="598" x2="582" y2="598" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="586" y="582" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="607" y="604" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B1</text>
+<text x="607" y="628" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<text x="526" y="646" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = A2; list2 = B2</text>
+<rect x="40" y="667" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="56" y="695" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">3. 2 &lt; 3 → берём A2</text>
+<rect x="56" y="709" width="42" height="32" rx="6" fill="#e9edf2"/>
+<text x="77" y="731" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#637185" text-anchor="middle">D</text>
+<line x1="99" y1="725" x2="112" y2="725" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="116" y="709" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="137" y="731" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<line x1="159" y1="725" x2="172" y2="725" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="176" y="709" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="197" y="731" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B1</text>
+<line x1="219" y1="725" x2="232" y2="725" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="236" y="709" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="257" y="731" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A2</text>
+<text x="257" y="755" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<text x="56" y="773" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = A3; list2 = B2</text>
+<rect x="510" y="667" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="526" y="695" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">3. 2 &lt; 3 → берём A2</text>
+<rect x="526" y="709" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="547" y="731" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<line x1="569" y1="725" x2="582" y2="725" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="586" y="709" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="607" y="731" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B1</text>
+<line x1="629" y1="725" x2="642" y2="725" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="646" y="709" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="667" y="731" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A2</text>
+<text x="667" y="755" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<text x="526" y="773" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = A3; list2 = B2</text>
+<rect x="40" y="794" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="56" y="822" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">4. 3 &lt; 4 → берём B2</text>
+<rect x="56" y="836" width="42" height="32" rx="6" fill="#e9edf2"/>
+<text x="77" y="858" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#637185" text-anchor="middle">D</text>
+<line x1="99" y1="852" x2="112" y2="852" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="116" y="836" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="137" y="858" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<line x1="159" y1="852" x2="172" y2="852" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="176" y="836" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="197" y="858" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B1</text>
+<line x1="219" y1="852" x2="232" y2="852" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="236" y="836" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="257" y="858" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A2</text>
+<line x1="279" y1="852" x2="292" y2="852" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="296" y="836" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="317" y="858" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B2</text>
+<text x="317" y="882" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<text x="56" y="900" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = A3; list2 = B3</text>
+<rect x="510" y="794" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="526" y="822" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">4. 3 &lt; 4 → берём B2</text>
+<rect x="526" y="836" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="547" y="858" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<line x1="569" y1="852" x2="582" y2="852" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="586" y="836" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="607" y="858" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B1</text>
+<line x1="629" y1="852" x2="642" y2="852" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="646" y="836" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="667" y="858" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A2</text>
+<line x1="689" y1="852" x2="702" y2="852" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="706" y="836" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="727" y="858" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B2</text>
+<text x="727" y="882" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<text x="526" y="900" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = A3; list2 = B3</text>
+<rect x="40" y="921" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="56" y="949" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">5. Равны 4 и 4 → берём A3</text>
+<rect x="56" y="963" width="42" height="32" rx="6" fill="#e9edf2"/>
+<text x="77" y="985" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#637185" text-anchor="middle">D</text>
+<line x1="99" y1="979" x2="112" y2="979" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="116" y="963" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="137" y="985" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<line x1="159" y1="979" x2="172" y2="979" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="176" y="963" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="197" y="985" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B1</text>
+<line x1="219" y1="979" x2="232" y2="979" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="236" y="963" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="257" y="985" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A2</text>
+<line x1="279" y1="979" x2="292" y2="979" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="296" y="963" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="317" y="985" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B2</text>
+<line x1="339" y1="979" x2="352" y2="979" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="356" y="963" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="377" y="985" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A3</text>
+<text x="377" y="1009" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<text x="56" y="1027" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = None; list2 = B3</text>
+<rect x="510" y="921" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="526" y="949" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">5. Равны 4 и 4 → берём A3</text>
+<rect x="526" y="963" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="547" y="985" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<line x1="569" y1="979" x2="582" y2="979" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="586" y="963" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="607" y="985" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B1</text>
+<line x1="629" y1="979" x2="642" y2="979" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="646" y="963" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="667" y="985" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A2</text>
+<line x1="689" y1="979" x2="702" y2="979" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="706" y="963" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="727" y="985" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B2</text>
+<line x1="749" y1="979" x2="762" y2="979" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="766" y="963" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="787" y="985" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A3</text>
+<text x="787" y="1009" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<text x="526" y="1027" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = None; list2 = B3</text>
+<rect x="40" y="1048" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="56" y="1076" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">6. Присоединяем остаток B3</text>
+<rect x="56" y="1090" width="42" height="32" rx="6" fill="#e9edf2"/>
+<text x="77" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#637185" text-anchor="middle">D</text>
+<line x1="99" y1="1106" x2="112" y2="1106" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="116" y="1090" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="137" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<line x1="159" y1="1106" x2="172" y2="1106" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="176" y="1090" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="197" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B1</text>
+<line x1="219" y1="1106" x2="232" y2="1106" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="236" y="1090" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="257" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A2</text>
+<line x1="279" y1="1106" x2="292" y2="1106" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="296" y="1090" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="317" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B2</text>
+<line x1="339" y1="1106" x2="352" y2="1106" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="356" y="1090" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="377" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A3</text>
+<line x1="399" y1="1106" x2="412" y2="1106" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="377" y="1136" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<rect x="416" y="1090" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="437" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B3</text>
+<text x="56" y="1154" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = None; list2 = B3</text>
+<rect x="510" y="1048" width="450" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="526" y="1076" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#172b4d" text-anchor="start">6. Присоединяем остаток B3</text>
+<rect x="526" y="1090" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="547" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A1</text>
+<line x1="569" y1="1106" x2="582" y2="1106" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="586" y="1090" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="607" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B1</text>
+<line x1="629" y1="1106" x2="642" y2="1106" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="646" y="1090" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="667" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A2</text>
+<line x1="689" y1="1106" x2="702" y2="1106" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="706" y="1090" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="727" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B2</text>
+<line x1="749" y1="1106" x2="762" y2="1106" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="766" y="1090" width="42" height="32" rx="6" fill="#edf4ff"/>
+<text x="787" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">A3</text>
+<line x1="809" y1="1106" x2="822" y2="1106" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="787" y="1136" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#52627a" text-anchor="middle">tail</text>
+<rect x="826" y="1090" width="42" height="32" rx="6" fill="#fff0cf"/>
+<text x="847" y="1112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#914700" text-anchor="middle">B3</text>
+<text x="526" y="1154" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#52627a" text-anchor="start">list1 = None; list2 = B3</text>
+<text x="40" y="1211" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">На шаге 6: tail.next = B3; tail остаётся на A3. Последний B3.next = None.</text>
+<rect x="40" y="1236" width="920" height="64" rx="12" fill="#f7f9fc"/>
+<text x="61" y="1276" font-family="Menlo, Consolas, monospace" font-size="21" font-weight="400" fill="#1d4ed8" text-anchor="start">return dummy.next → A1</text>
+<text x="531" y="1276" font-family="Menlo, Consolas, monospace" font-size="21" font-weight="400" fill="#1d4ed8" text-anchor="start">return head → A1</text>
+<rect x="40" y="1324" width="920" height="126" rx="12" fill="#e7f5ef"/>
+<text x="61" y="1362" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#11654f" text-anchor="start">Результат: те же шесть узлов, без D</text>
+<text x="61" y="1411" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#11654f" text-anchor="start">1 → 1 → 2 → 3 → 4 → 4 → None</text>
+</svg>

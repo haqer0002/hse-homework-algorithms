@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1190" viewBox="0 0 1000 1190" role="img" aria-labelledby="title desc">
+<title id="title">Проверка последовательностей стека</title>
+<desc id="desc">pushed: 1, 2, 3, 4, 5; popped: 1, 3, 5, 4, 2. Показаны все десять операций, стек и следующий требуемый элемент после каждой операции. В конце pop_index = 5, результат True. Для pushed: 1, 2, 3 и popped: 3, 1, 2 результат False.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#637185"/></marker></defs>
+<rect x="0" y="0" width="1000" height="1190" rx="0" fill="#ffffff"/>
+<text x="40" y="57" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#172b4d" text-anchor="start">Проверка последовательностей стека</text>
+<text x="40" y="91" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">Добавляем по порядку. Совпала вершина — сразу извлекаем.</text>
+<rect x="40" y="117" width="920" height="94" rx="12" fill="#f7f9fc"/>
+<text x="61" y="152" font-family="Menlo, Consolas, monospace" font-size="22" font-weight="400" fill="#172b4d" text-anchor="start">pushed = [1, 2, 3, 4, 5]</text>
+<text x="61" y="186" font-family="Menlo, Consolas, monospace" font-size="22" font-weight="400" fill="#172b4d" text-anchor="start">popped = [1, 3, 5, 4, 2]</text>
+<text x="40" y="246" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">Старт: стек пуст, pop_index = 0. Вершина стека справа.</text>
+<rect x="40" y="265" width="920" height="44" rx="8" fill="#edf4ff"/>
+<text x="58" y="294" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">Шаг</text>
+<text x="134" y="294" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">Операция</text>
+<text x="402" y="294" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">Стек после операции</text>
+<text x="746" y="294" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">Следующий pop</text>
+<rect x="40" y="319" width="920" height="50" rx="6" fill="#f7f9fc"/>
+<text x="66" y="351" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">1</text>
+<text x="134" y="351" font-family="Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#1d4ed8" text-anchor="start">push(1)</text>
+<rect x="402" y="325" width="46" height="37" rx="6" fill="#fff0cf"/>
+<text x="425" y="351" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#914700" text-anchor="middle">1</text>
+<text x="790" y="351" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#172b4d" text-anchor="middle">1</text>
+<text x="858" y="351" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">j = 0</text>
+<rect x="40" y="376" width="920" height="50" rx="6" fill="#ffffff"/>
+<text x="66" y="408" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">2</text>
+<text x="134" y="408" font-family="Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#11654f" text-anchor="start">pop() → 1</text>
+<text x="402" y="408" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<text x="790" y="408" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#172b4d" text-anchor="middle">3</text>
+<text x="858" y="408" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">j = 1</text>
+<rect x="40" y="433" width="920" height="50" rx="6" fill="#f7f9fc"/>
+<text x="66" y="465" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">3</text>
+<text x="134" y="465" font-family="Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#1d4ed8" text-anchor="start">push(2)</text>
+<rect x="402" y="439" width="46" height="37" rx="6" fill="#fff0cf"/>
+<text x="425" y="465" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#914700" text-anchor="middle">2</text>
+<text x="790" y="465" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#172b4d" text-anchor="middle">3</text>
+<text x="858" y="465" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">j = 1</text>
+<rect x="40" y="490" width="920" height="50" rx="6" fill="#ffffff"/>
+<text x="66" y="522" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">4</text>
+<text x="134" y="522" font-family="Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#1d4ed8" text-anchor="start">push(3)</text>
+<rect x="402" y="496" width="46" height="37" rx="6" fill="#edf4ff"/>
+<text x="425" y="522" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="462" y="496" width="46" height="37" rx="6" fill="#fff0cf"/>
+<text x="485" y="522" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#914700" text-anchor="middle">3</text>
+<text x="790" y="522" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#172b4d" text-anchor="middle">3</text>
+<text x="858" y="522" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">j = 1</text>
+<rect x="40" y="547" width="920" height="50" rx="6" fill="#f7f9fc"/>
+<text x="66" y="579" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">5</text>
+<text x="134" y="579" font-family="Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#11654f" text-anchor="start">pop() → 3</text>
+<rect x="402" y="553" width="46" height="37" rx="6" fill="#fff0cf"/>
+<text x="425" y="579" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#914700" text-anchor="middle">2</text>
+<text x="790" y="579" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#172b4d" text-anchor="middle">5</text>
+<text x="858" y="579" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">j = 2</text>
+<rect x="40" y="604" width="920" height="50" rx="6" fill="#ffffff"/>
+<text x="66" y="636" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">6</text>
+<text x="134" y="636" font-family="Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#1d4ed8" text-anchor="start">push(4)</text>
+<rect x="402" y="610" width="46" height="37" rx="6" fill="#edf4ff"/>
+<text x="425" y="636" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="462" y="610" width="46" height="37" rx="6" fill="#fff0cf"/>
+<text x="485" y="636" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#914700" text-anchor="middle">4</text>
+<text x="790" y="636" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#172b4d" text-anchor="middle">5</text>
+<text x="858" y="636" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">j = 2</text>
+<rect x="40" y="661" width="920" height="50" rx="6" fill="#f7f9fc"/>
+<text x="66" y="693" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">7</text>
+<text x="134" y="693" font-family="Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#1d4ed8" text-anchor="start">push(5)</text>
+<rect x="402" y="667" width="46" height="37" rx="6" fill="#edf4ff"/>
+<text x="425" y="693" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="462" y="667" width="46" height="37" rx="6" fill="#edf4ff"/>
+<text x="485" y="693" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#1d4ed8" text-anchor="middle">4</text>
+<rect x="522" y="667" width="46" height="37" rx="6" fill="#fff0cf"/>
+<text x="545" y="693" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#914700" text-anchor="middle">5</text>
+<text x="790" y="693" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#172b4d" text-anchor="middle">5</text>
+<text x="858" y="693" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">j = 2</text>
+<rect x="40" y="718" width="920" height="50" rx="6" fill="#ffffff"/>
+<text x="66" y="750" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">8</text>
+<text x="134" y="750" font-family="Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#11654f" text-anchor="start">pop() → 5</text>
+<rect x="402" y="724" width="46" height="37" rx="6" fill="#edf4ff"/>
+<text x="425" y="750" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="462" y="724" width="46" height="37" rx="6" fill="#fff0cf"/>
+<text x="485" y="750" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#914700" text-anchor="middle">4</text>
+<text x="790" y="750" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#172b4d" text-anchor="middle">4</text>
+<text x="858" y="750" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">j = 3</text>
+<rect x="40" y="775" width="920" height="50" rx="6" fill="#f7f9fc"/>
+<text x="66" y="807" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">9</text>
+<text x="134" y="807" font-family="Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#11654f" text-anchor="start">pop() → 4</text>
+<rect x="402" y="781" width="46" height="37" rx="6" fill="#fff0cf"/>
+<text x="425" y="807" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#914700" text-anchor="middle">2</text>
+<text x="790" y="807" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#172b4d" text-anchor="middle">2</text>
+<text x="858" y="807" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">j = 4</text>
+<rect x="40" y="832" width="920" height="50" rx="6" fill="#ffffff"/>
+<text x="66" y="864" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">10</text>
+<text x="134" y="864" font-family="Menlo, Consolas, monospace" font-size="20" font-weight="400" fill="#11654f" text-anchor="start">pop() → 2</text>
+<text x="402" y="864" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<text x="790" y="864" font-family="Arial, sans-serif" font-size="22" font-weight="400" fill="#172b4d" text-anchor="middle">—</text>
+<text x="858" y="864" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">j = 5</text>
+<text x="40" y="910" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#52627a" text-anchor="start">Жёлтым — вершина. j = pop_index: сколько элементов popped уже извлечено.</text>
+<rect x="40" y="932" width="920" height="66" rx="12" fill="#e7f5ef"/>
+<text x="61" y="974" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#11654f" text-anchor="start">pop_index = 5 = len(popped) → True</text>
+<rect x="40" y="1022" width="920" height="128" rx="12" fill="#fff0f0"/>
+<text x="61" y="1057" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#b42332" text-anchor="start">Когда ответ False</text>
+<text x="61" y="1090" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#172b4d" text-anchor="start">pushed = [1, 2, 3], popped = [3, 1, 2]. После трёх push и извлечения 3</text>
+<text x="61" y="1121" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#b42332" text-anchor="start">стек [1, 2]: нужна 1, но сверху 2. Добавлять больше нечего.</text>
+</svg>
