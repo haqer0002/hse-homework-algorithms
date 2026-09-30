@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1130" viewBox="0 0 1000 1130" role="img" aria-labelledby="title desc">
+<title id="title">Анаграммы: группы по буквам</title>
+<desc id="desc">Слова eat, tea, tan, ate, nat, bat. Отсортированные буквы становятся ключом: aet, aet, ant, aet, ant, abt. После каждого слова показана его группа. Результат: eat, tea, ate; tan, nat; bat.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#637185"/></marker></defs>
+<rect x="0" y="0" width="1000" height="1130" rx="0" fill="#ffffff"/>
+<text x="40" y="57" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#172b4d" text-anchor="start">Анаграммы: группы по буквам</text>
+<text x="40" y="91" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#52627a" text-anchor="start">Вход: eat, tea, tan, ate, nat, bat.</text>
+<rect x="40" y="117" width="920" height="57" rx="12" fill="#f7f9fc"/>
+<text x="61" y="152" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#172b4d" text-anchor="start">Ключ — отсортированные буквы: eat → aet, tea → aet, ate → aet.</text>
+<text x="40" y="206" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">Каждое слово добавляем в группу с его ключом.</text>
+<rect x="40" y="225" width="920" height="44" rx="8" fill="#edf4ff"/>
+<text x="60" y="254" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">Шаг</text>
+<text x="145" y="254" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">Слово</text>
+<text x="302" y="254" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">Ключ</text>
+<text x="460" y="254" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">Группа после добавления</text>
+<rect x="40" y="279" width="920" height="70" rx="6" fill="#f7f9fc"/>
+<text x="67" y="322" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#52627a" text-anchor="start">1</text>
+<text x="145" y="322" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#172b4d" text-anchor="start">eat</text>
+<rect x="289" y="296" width="91" height="36" rx="6" fill="#fff0cf"/>
+<text x="335" y="322" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#914700" text-anchor="middle">aet</text>
+<text x="460" y="308" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#1d4ed8" text-anchor="start">eat</text>
+<text x="460" y="333" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#914700" text-anchor="start">создаём группу</text>
+<rect x="40" y="359" width="920" height="70" rx="6" fill="#ffffff"/>
+<text x="67" y="402" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#52627a" text-anchor="start">2</text>
+<text x="145" y="402" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#172b4d" text-anchor="start">tea</text>
+<rect x="289" y="376" width="91" height="36" rx="6" fill="#edf4ff"/>
+<text x="335" y="402" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#1d4ed8" text-anchor="middle">aet</text>
+<text x="460" y="388" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#1d4ed8" text-anchor="start">eat, tea</text>
+<text x="460" y="413" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#52627a" text-anchor="start">добавляем в существующую группу</text>
+<rect x="40" y="439" width="920" height="70" rx="6" fill="#f7f9fc"/>
+<text x="67" y="482" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#52627a" text-anchor="start">3</text>
+<text x="145" y="482" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#172b4d" text-anchor="start">tan</text>
+<rect x="289" y="456" width="91" height="36" rx="6" fill="#fff0cf"/>
+<text x="335" y="482" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#914700" text-anchor="middle">ant</text>
+<text x="460" y="468" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#1d4ed8" text-anchor="start">tan</text>
+<text x="460" y="493" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#914700" text-anchor="start">создаём группу</text>
+<rect x="40" y="519" width="920" height="70" rx="6" fill="#ffffff"/>
+<text x="67" y="562" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#52627a" text-anchor="start">4</text>
+<text x="145" y="562" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#172b4d" text-anchor="start">ate</text>
+<rect x="289" y="536" width="91" height="36" rx="6" fill="#edf4ff"/>
+<text x="335" y="562" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#1d4ed8" text-anchor="middle">aet</text>
+<text x="460" y="548" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#1d4ed8" text-anchor="start">eat, tea, ate</text>
+<text x="460" y="573" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#52627a" text-anchor="start">добавляем в существующую группу</text>
+<rect x="40" y="599" width="920" height="70" rx="6" fill="#f7f9fc"/>
+<text x="67" y="642" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#52627a" text-anchor="start">5</text>
+<text x="145" y="642" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#172b4d" text-anchor="start">nat</text>
+<rect x="289" y="616" width="91" height="36" rx="6" fill="#edf4ff"/>
+<text x="335" y="642" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#1d4ed8" text-anchor="middle">ant</text>
+<text x="460" y="628" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#1d4ed8" text-anchor="start">tan, nat</text>
+<text x="460" y="653" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#52627a" text-anchor="start">добавляем в существующую группу</text>
+<rect x="40" y="679" width="920" height="70" rx="6" fill="#ffffff"/>
+<text x="67" y="722" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#52627a" text-anchor="start">6</text>
+<text x="145" y="722" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#172b4d" text-anchor="start">bat</text>
+<rect x="289" y="696" width="91" height="36" rx="6" fill="#fff0cf"/>
+<text x="335" y="722" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#914700" text-anchor="middle">abt</text>
+<text x="460" y="708" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#1d4ed8" text-anchor="start">bat</text>
+<text x="460" y="733" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#914700" text-anchor="start">создаём группу</text>
+<text x="40" y="799" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">Группы и слова сохраняют порядок появления во входе.</text>
+<rect x="40" y="824" width="920" height="266" rx="12" fill="#e7f5ef"/>
+<text x="61" y="863" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#11654f" text-anchor="start">Результат</text>
+<rect x="61" y="891" width="102" height="40" rx="6" fill="#ffffff"/>
+<text x="112" y="919" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#11654f" text-anchor="middle">aet</text>
+<line x1="174" y1="911" x2="212" y2="911" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="230" y="920" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#11654f" text-anchor="start">[ eat, tea, ate ]</text>
+<rect x="61" y="948" width="102" height="40" rx="6" fill="#ffffff"/>
+<text x="112" y="976" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#11654f" text-anchor="middle">ant</text>
+<line x1="174" y1="968" x2="212" y2="968" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="230" y="977" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#11654f" text-anchor="start">[ tan, nat ]</text>
+<rect x="61" y="1005" width="102" height="40" rx="6" fill="#ffffff"/>
+<text x="112" y="1033" font-family="Menlo, Consolas, monospace" font-size="23" font-weight="700" fill="#11654f" text-anchor="middle">abt</text>
+<line x1="174" y1="1025" x2="212" y2="1025" stroke="#637185" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="230" y="1034" font-family="Arial, sans-serif" font-size="25" font-weight="400" fill="#11654f" text-anchor="start">[ bat ]</text>
+</svg>

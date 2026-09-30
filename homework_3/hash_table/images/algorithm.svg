@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1725" viewBox="0 0 1000 1725" role="img" aria-labelledby="title desc">
+<title id="title">Хеш-таблица: коллизии и размер</title>
+<desc id="desc">Начинаем с четырёх пустых корзин. Вставки 1:A, 5:B, 9:C попадают в корзину 1. Вставка 2:D расширяет таблицу до восьми корзин. Обновляем 5:B2, search(9) возвращает C. После удаления 1, 9, 2 остаётся 5:B2, таблица уменьшена до четырёх корзин. Данные хранятся в списках.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 0 L 8 4 L 0 8 z" fill="#637185"/></marker></defs>
+<rect x="0" y="0" width="1000" height="1725" rx="0" fill="#ffffff"/>
+<text x="40" y="57" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#172b4d" text-anchor="start">Хеш-таблица: коллизии и размер</text>
+<text x="40" y="91" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#52627a" text-anchor="start">Индекс корзины = hash(key) % c. Для ключей этого примера hash(key) = key.</text>
+<rect x="40" y="117" width="920" height="94" rx="12" fill="#f7f9fc"/>
+<text x="61" y="152" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#172b4d" text-anchor="start">Начало: 4 пустые корзины. n — число пар, c — число корзин.</text>
+<text x="61" y="186" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#172b4d" text-anchor="start">Корзина — список пар [ключ, значение]. Жёлтым — новая или изменённая пара.</text>
+<rect x="40" y="236" width="450" height="409" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="56" y="264" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#172b4d" text-anchor="start">1–3. Вставки 1 → A, 5 → B, 9 → C</text>
+<text x="56" y="289" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">Коллизия: все три ключа попадают в корзину 1.</text>
+<text x="56" y="315" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">n = 3, c = 4</text>
+<rect x="56" y="329" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="350" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">0</text>
+<rect x="94" y="329" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="350" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="56" y="364" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="385" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="94" y="364" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="99" y="366" width="105" height="25" rx="4" fill="#fff0cf"/>
+<text x="151" y="385" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#914700" text-anchor="middle">[1, A]</text>
+<rect x="210" y="366" width="105" height="25" rx="4" fill="#fff0cf"/>
+<text x="262" y="385" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#914700" text-anchor="middle">[5, B]</text>
+<rect x="321" y="366" width="105" height="25" rx="4" fill="#fff0cf"/>
+<text x="373" y="385" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#914700" text-anchor="middle">[9, C]</text>
+<rect x="56" y="399" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="420" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="94" y="399" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="420" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="56" y="434" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="455" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">3</text>
+<rect x="94" y="434" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="455" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<text x="56" y="496" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#52627a" text-anchor="start">Корзина 1 по шагам:</text>
+<text x="56" y="526" font-family="Menlo, Consolas, monospace" font-size="17" font-weight="400" fill="#172b4d" text-anchor="start">1: [1, A]</text>
+<text x="56" y="556" font-family="Menlo, Consolas, monospace" font-size="17" font-weight="400" fill="#172b4d" text-anchor="start">2: [1, A] [5, B]</text>
+<text x="56" y="586" font-family="Menlo, Consolas, monospace" font-size="17" font-weight="400" fill="#172b4d" text-anchor="start">3: [1, A] [5, B] [9, C]</text>
+<text x="56" y="632" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#52627a" text-anchor="start">3/4 = 0.75: размер пока сохраняется.</text>
+<rect x="510" y="236" width="450" height="409" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="526" y="264" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#172b4d" text-anchor="start">4. insert(2, D): расширение</text>
+<text x="526" y="289" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">Заново распределяем старые пары и добавляем 2.</text>
+<text x="526" y="315" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">n = 4, c = 8</text>
+<rect x="526" y="329" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="350" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">0</text>
+<rect x="564" y="329" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="350" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="526" y="364" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="385" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="564" y="364" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="569" y="366" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="621" y="385" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[1, A]</text>
+<rect x="680" y="366" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="732" y="385" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[9, C]</text>
+<rect x="526" y="399" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="420" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="564" y="399" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="569" y="401" width="105" height="25" rx="4" fill="#fff0cf"/>
+<text x="621" y="420" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#914700" text-anchor="middle">[2, D]</text>
+<rect x="526" y="434" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="455" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">3</text>
+<rect x="564" y="434" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="455" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="526" y="469" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="490" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">4</text>
+<rect x="564" y="469" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="490" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="526" y="504" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="525" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">5</text>
+<rect x="564" y="504" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="569" y="506" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="621" y="525" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[5, B]</text>
+<rect x="526" y="539" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="560" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">6</text>
+<rect x="564" y="539" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="560" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="526" y="574" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="595" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">7</text>
+<rect x="564" y="574" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="595" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<text x="526" y="632" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#52627a" text-anchor="start">Новая пара дала бы 4/4 &gt; 0.75 → растём.</text>
+<rect x="40" y="667" width="450" height="409" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="56" y="695" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#172b4d" text-anchor="start">5. insert(5, B2), затем search(9)</text>
+<text x="56" y="720" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">Меняем значение 5; поиск не меняет таблицу.</text>
+<text x="56" y="746" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">n = 4, c = 8</text>
+<rect x="56" y="760" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="781" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">0</text>
+<rect x="94" y="760" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="781" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="56" y="795" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="816" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="94" y="795" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="99" y="797" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="151" y="816" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[1, A]</text>
+<rect x="210" y="797" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="262" y="816" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[9, C]</text>
+<rect x="56" y="830" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="851" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="94" y="830" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="99" y="832" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="151" y="851" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[2, D]</text>
+<rect x="56" y="865" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="886" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">3</text>
+<rect x="94" y="865" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="886" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="56" y="900" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="921" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">4</text>
+<rect x="94" y="900" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="921" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="56" y="935" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="956" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">5</text>
+<rect x="94" y="935" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="99" y="937" width="105" height="25" rx="4" fill="#fff0cf"/>
+<text x="151" y="956" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#914700" text-anchor="middle">[5, B2]</text>
+<rect x="56" y="970" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="991" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">6</text>
+<rect x="94" y="970" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="991" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="56" y="1005" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="1026" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">7</text>
+<rect x="94" y="1005" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="1026" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<text x="56" y="1063" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#11654f" text-anchor="start">search(9) → C; число пар не изменилось.</text>
+<rect x="510" y="667" width="450" height="409" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="526" y="695" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#172b4d" text-anchor="start">6. delete(1)</text>
+<text x="526" y="720" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">Удаляем одну пару из корзины с коллизией.</text>
+<text x="526" y="746" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">n = 3, c = 8</text>
+<rect x="526" y="760" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="781" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">0</text>
+<rect x="564" y="760" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="781" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="526" y="795" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="816" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="564" y="795" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="569" y="797" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="621" y="816" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[9, C]</text>
+<rect x="526" y="830" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="851" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="564" y="830" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="569" y="832" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="621" y="851" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[2, D]</text>
+<rect x="526" y="865" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="886" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">3</text>
+<rect x="564" y="865" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="886" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="526" y="900" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="921" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">4</text>
+<rect x="564" y="900" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="921" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="526" y="935" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="956" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">5</text>
+<rect x="564" y="935" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="569" y="937" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="621" y="956" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[5, B2]</text>
+<rect x="526" y="970" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="991" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">6</text>
+<rect x="564" y="970" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="991" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="526" y="1005" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="1026" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">7</text>
+<rect x="564" y="1005" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="1026" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<text x="526" y="1063" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#52627a" text-anchor="start">Ключ 9 остаётся в корзине 1.</text>
+<rect x="40" y="1098" width="450" height="409" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="56" y="1126" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#172b4d" text-anchor="start">7. delete(9)</text>
+<text x="56" y="1151" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">Остаются две пары в разных корзинах.</text>
+<text x="56" y="1177" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">n = 2, c = 8</text>
+<rect x="56" y="1191" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="1212" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">0</text>
+<rect x="94" y="1191" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="1212" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="56" y="1226" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="1247" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="94" y="1226" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="1247" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="56" y="1261" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="1282" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="94" y="1261" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="99" y="1263" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="151" y="1282" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[2, D]</text>
+<rect x="56" y="1296" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="1317" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">3</text>
+<rect x="94" y="1296" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="1317" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="56" y="1331" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="1352" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">4</text>
+<rect x="94" y="1331" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="1352" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="56" y="1366" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="1387" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">5</text>
+<rect x="94" y="1366" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="99" y="1368" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="151" y="1387" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[5, B2]</text>
+<rect x="56" y="1401" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="1422" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">6</text>
+<rect x="94" y="1401" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="1422" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="56" y="1436" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="71" y="1457" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">7</text>
+<rect x="94" y="1436" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="107" y="1457" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<text x="56" y="1494" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#52627a" text-anchor="start">2/8 = 0.25: размер пока сохраняется.</text>
+<rect x="510" y="1098" width="450" height="409" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+<text x="526" y="1126" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#172b4d" text-anchor="start">8. delete(2): уменьшение</text>
+<text x="526" y="1151" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">Заново вычисляем индексы оставшихся пар.</text>
+<text x="526" y="1177" font-family="Menlo, Consolas, monospace" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="start">n = 1, c = 4</text>
+<rect x="526" y="1191" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="1212" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">0</text>
+<rect x="564" y="1191" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="1212" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="526" y="1226" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="1247" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">1</text>
+<rect x="564" y="1226" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<rect x="569" y="1228" width="105" height="25" rx="4" fill="#edf4ff"/>
+<text x="621" y="1247" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#1d4ed8" text-anchor="middle">[5, B2]</text>
+<rect x="526" y="1261" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="1282" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">2</text>
+<rect x="564" y="1261" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="1282" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<rect x="526" y="1296" width="29" height="29" rx="5" fill="#edf4ff"/>
+<text x="541" y="1317" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1d4ed8" text-anchor="middle">3</text>
+<rect x="564" y="1296" width="379" height="29" rx="5" fill="#f7f9fc"/>
+<text x="577" y="1317" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#52627a" text-anchor="start">пусто</text>
+<text x="526" y="1494" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#52627a" text-anchor="start">1/8 &lt; 0.25 → возвращаемся к 4 корзинам.</text>
+<text x="40" y="1550" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#52627a" text-anchor="start">При изменении c ключ 5 меняет корзину: 5 % 8 = 5, а 5 % 4 = 1.</text>
+<rect x="40" y="1574" width="920" height="111" rx="12" fill="#e7f5ef"/>
+<text x="61" y="1613" font-family="Arial, sans-serif" font-size="27" font-weight="700" fill="#11654f" text-anchor="start">Итог: [[5, B2]], n = 1, c = 4</text>
+<text x="61" y="1656" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#11654f" text-anchor="start">Обновление не добавило второй ключ 5; поиск вернул C.</text>
+</svg>
